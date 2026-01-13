@@ -1,10 +1,17 @@
 import React from 'react'
-
+import Products from './data/Products'
 const App = () => {
   return (
-    <div>
-      <h1 className='text-4xl'>Hello</h1>
-    </div>
+    <>
+    {Products.map((item) =>(
+        <div key={item.id}>
+            <img className='w-100 ' src={item.image} alt="" />
+            <p>${item.price}</p>
+            <p>{item.name}</p>
+            <p>{item.title}</p>
+        </div>
+      ))}
+      </>
   )
 }
 
