@@ -5,7 +5,7 @@ const Prolists = ({item}) => {
     <div>
        <div>
          <div className=''>
-     <div className='bg-white hover:scale-105 transition-all duration-300 rounded-2xl shadow-2xl'>
+     <div className='bg-white  hover:scale-105 transition-all duration-300 rounded-2xl shadow-2xl'>
         <Link to={`/item/${item.id}`}><div className='flex  justify-center  items-center'>
       <img  className='w-70 py-11' src={item.image[0]} alt="" />
         </div>

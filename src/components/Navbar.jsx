@@ -10,7 +10,7 @@ import useCart from '../hooks/useCart';
 const Navbar = () => {
   const {cart} = useCart();
   return (
-    <div className='sticky top-2 z-30'>
+    <div className='sticky font-mee top-2 z-30'>
       <div className='grid grid-cols-3 bg-white rounded-2xl w-[80%] m-auto shadow-2xl  h-15 px-10'>
           <div className=''>
            <NavLink to={"/"}> <img  className='w-25 h-11' src={logo} alt="" /></NavLink>

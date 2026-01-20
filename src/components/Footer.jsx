@@ -5,9 +5,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const quickLinks = [
   { name: "Home", path: "/" },
-  { name: "Shop", path: "/products" },
-  { name: "About Us", path: "/about" },
-  { name: "Contact", path: "/contact" },
+  { name: "Shop", path: "#" },
+  { name: "About Us", path: "#" },
+  { name: "Contact", path: "#" },
 ];
 
 const supportLinks = [
