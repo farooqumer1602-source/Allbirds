@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "../assets/logo.png"
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -7,16 +7,33 @@ import { Link ,NavLink} from 'react-router-dom';
 import Cart from '../pages/Cart';
 import useCart from '../hooks/useCart';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const Navbar = () => {
+  const [open, setopen] = useState(false)
+   useEffect(() => {
+    if (open) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Cleanup on unmount
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [open]);
+
+  const Handleopen =()=> {
+    setopen(!open);
+  }
   const {cart} = useCart();
   return (
     <div className='sticky  top-2 z-30'>
       <div className='grid sm:grid-cols-[60%_40%] grid-cols-[60%_40%] lg:grid-cols-3 md:grid-cols-3 bg-white  rounded-2xl w-[95%] px-3 m-auto shadow-2xl md:px-8 sm:px-8 h-15 lg:px-10'>
           <div className='flex justify-between  '>
-            <button className='lg:hidden md:hidden '>
+            <button onClick={Handleopen} className=' lg:hidden md:hidden '>
              <MenuIcon/>
+            
             </button>
            <NavLink to={"/"}> <img  className='w-25 h-11' src={logo} alt="" /></NavLink>
           </div>
@@ -52,6 +69,17 @@ const Navbar = () => {
                 </li>
             </ul>
           </div>
+      </div>
+      <div className={`${open ? "translate-x-0" : "-translate-x-full"} text-white bg-gray-900 transition-all duration-300 w-[60%] lg:hidden md:hidden pt-9 p-5 top-0 fixed left-0 h-screen`}>
+          <button className='' onClick={Handleopen }>
+            <CloseIcon fontSize='large'/>
+          </button>
+          <ul className='  p-10 space-y-8 text-3xl'>
+            <li><Link onClick={Handleopen} to={"/"}>Home</Link></li>
+            <li><Link  onClick={Handleopen} to={"/Mens"}>Men</Link></li>
+            <li><Link onClick={Handleopen}  to={"/Womens"}>Women</Link></li>
+            <li onClick={Handleopen} >About</li>
+          </ul>
       </div>
     </div>
   )
