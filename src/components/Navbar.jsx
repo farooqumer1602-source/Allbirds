@@ -27,7 +27,7 @@ const Navbar = () => {
             <ul className='flex lg:gap-3.5 md:gap-3.5 sm:gap-3.5 text-[13px] gap-x-2'>
               <NavLink to={"/"} className={({isActive})=>
               isActive && "border-b-red-600 border-b"}><li className="hover:font-semibold hover:scale-105 transition-all duration-300">Home</li></NavLink>
-              <li className=''>About</li>
+              <li className='hidden lg:flex md:flex sm:flex'>About</li>
                <Link to={"/Cart"}> <li className='relative'><LocalMallIcon/>
                {
                 cart.length > 0 && (
