@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 const Hero = () => {
   const hero2 = [
     {
@@ -36,11 +35,11 @@ const Hero = () => {
     <div>
       <div className="relative">
         <img
-          className=" h-160  rounded-4xl w-full"
+          className="h-160 rounded-4xl w-full"
           src="https://www.allbirds.com/cdn/shop/files/26Q1_Varsity_Site_Homepage_Hero_MensWomens_Desktop_16x9_Update_1_6.png?v=1767733583&width=2560"
           alt=""
         />
-        <div className="gap-3 flex absolute right-20 bottom-18">
+        <div className="gap-3 bottom-18 right-20  flex absolute">
            <Link to={"/Mens"}> <button className="cursor-pointer bg-white uppercase px-6 border-none outline-none rounded-3xl p-2 font-semibold hover:bg-gray-900 hover:text-white transition-all duration-500">
             shop men
           </button></Link>
