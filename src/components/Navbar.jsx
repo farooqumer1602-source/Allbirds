@@ -74,7 +74,7 @@ const Navbar = () => {
           <button className='' onClick={Handleopen }>
             <CloseIcon fontSize='large'/>
           </button>
-          <ul className='  p-10 space-y-8 text-2xl sm:block flex justify-center items-center flex-col'>
+          <ul className='  p-10 space-y-8 text-[12px]  sm:block flex justify-center items-center flex-col'>
             <li><Link onClick={Handleopen} to={"/"}>Home</Link></li>
             <li><Link  onClick={Handleopen} to={"/Mens"}>Men</Link></li>
             <li><Link onClick={Handleopen}  to={"/Womens"}>Women</Link></li>
